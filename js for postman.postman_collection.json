@@ -1,0 +1,178 @@
+{
+	"info": {
+		"_postman_id": "82e6478c-635d-4907-8656-191be907f87a",
+		"name": "js for postman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "28480851"
+	},
+	"item": [
+		{
+			"name": "httpbin.org/get",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"/*\r",
+							"console.clear();\r",
+							"let p = {\r",
+							"    name:\"ram\",\r",
+							"    age:20,\r",
+							"    \"f-name\":\"yes\",\r",
+							"    show: function(){\r",
+							"        console.log(`hello ${this.name}`);\r",
+							"    }\r",
+							"};\r",
+							"p.email =\"p@example.com\";\r",
+							"console.log(p[\"f-name\"]);\r",
+							"console.log(p.name);\r",
+							"console.log(p[\"age\"]);\r",
+							"p.show();\r",
+							"\r",
+							"\r",
+							"//\r",
+							"console.clear();\r",
+							"let p = {\r",
+							"    name:\"ram\",\r",
+							"    age:20,\r",
+							"    \"f-name\":\"yes\",\r",
+							"    show: function(){\r",
+							"        console.log(`hello ${this.name}`);\r",
+							"    }\r",
+							"};\r",
+							"p.email =\"p@example.com\";\r",
+							"//console.log(JSON.stringify(p));\r",
+							"let pjson = JSON.parse(JSON.stringify(p));\r",
+							"console.log(pjson.age);\r",
+							"\r",
+							"\r",
+							"//\r",
+							"console.clear();\r",
+							"let p = {\r",
+							"    socialm: ['fbook', 'insta', 'twitter',90, {name: \"any\"}]\r",
+							"};\r",
+							"//console.log(p.socialm);\r",
+							"//console.log(p.socialm[4]);\r",
+							"//console.log(p.socialm[4].name);\r",
+							"//p.socialm.push(\"youtube\");\r",
+							"//p.socialm.pop();\r",
+							"console.log(p.socialm.sort());\r",
+							"*/\r",
+							"\r",
+							"/*\r",
+							"//\r",
+							"console.clear();\r",
+							"let p = {\r",
+							"    socialm: ['fbook', 'insta', 'twitter',90, {name: \"any\"}]\r",
+							"};\r",
+							"*/\r",
+							"/*\r",
+							"p.socialm.forEach(logitems);\r",
+							"function logitems(item, index,array){\r",
+							"    console.log(item,index,array);\r",
+							"};\r",
+							"*/\r",
+							"/*\r",
+							"p.socialm.forEach(function (item, index,array){\r",
+							"    console.log(item)\r",
+							"});\r",
+							"*/\r",
+							"/*\r",
+							"p.socialm.forEach((item, index,array) => {\r",
+							"    console.log(item)\r",
+							"});\r",
+							"*/\r",
+							"//p.socialm.forEach(console.log);\r",
+							"\r",
+							"\r",
+							"//\r",
+							"pm.sendRequest(\"https://postman-echo.com/get\", function (err, response) {\r",
+							"    console.log(response.json());\r",
+							"});\r",
+							"\r",
+							"//https://run.mocky.io/v3/0d6b61f9-a2db-4286-964a-9460db039204\r",
+							"//https://run.mocky.io/v3/62aa820c-8e42-43e7-8897-6f154b253711"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "httpbin.org/get"
+			},
+			"response": []
+		},
+		{
+			"name": "https://run.mocky.io/v3/0d6b61f9-a2db-4286-964a-9460db039204",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"const response = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Testing the name\", function () {    \r",
+							"    pm.expect(response.name).to.eql(\"Jane\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"insta check\", () => {  \r",
+							"    let insta = false;  \r",
+							"    response.socialMedia.forEach((item) => {\r",
+							"        if(item === 'YouTube')\r",
+							"            insta = true;\r",
+							"    });\r",
+							"    pm.expect(insta).to.eql(true);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://run.mocky.io/v3/0d6b61f9-a2db-4286-964a-9460db039204"
+			},
+			"response": []
+		},
+		{
+			"name": "https://run.mocky.io/v3/62aa820c-8e42-43e7-8897-6f154b253711",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"console.clear();\r",
+							"const response = pm.response.json();\r",
+							"//console.log(response.Response.Data[0].Results[0].Address.Active);\r",
+							"const results = response.Response.Data[0].Results;\r",
+							"\r",
+							"let hasaddr = false;\r",
+							"results.forEach((i) => {\r",
+							"    console.log(i.Address.Active);\r",
+							"    console.log(i.Address.Active === true);\r",
+							"    if (i.Address.Active === true){\r",
+							"        hasaddr = true;\r",
+							"    }\r",
+							"});\r",
+							"console.log(`has active results ${hasaddr}`);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://run.mocky.io/v3/62aa820c-8e42-43e7-8897-6f154b253711"
+			},
+			"response": []
+		}
+	]
+}
